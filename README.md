@@ -25,12 +25,14 @@ npm i
 
 #### token_config
 ```
+/* default.ts */
 tokenSecret: '[any-characters-better-32-bit]'
 ```
 `tokenSecure` is the secret key for `jwt` encoding. 32 bit any characters.
 
 #### mongodb_config
 ```
+/* default.ts */
 mongodb: {
   pwsp: {
     uri: 'mongodb://[your-internal-mongodb-domain]:[port]/[database-name]',
@@ -49,6 +51,7 @@ mongodb: {
 #### qiniu_config
 > `qiniu` is a cdn in China. you could easliy change to `aws` or other service provider when you are in code.
 ```
+/* default.ts */
 qiniu: {
   accessKey: '[your-qiniu-access-key]',
   secretKey: '[your-qiniu-secret-key]',
@@ -67,6 +70,7 @@ qiniu: {
 
 #### ant_design_config
 ```
+/* webpack.config.prod.js */
 // const tsImportPlugin = require('ts-import-plugin')
 
 // getCustomTransformers: () => ({
@@ -81,14 +85,14 @@ if you want to use ant design (really fantastic ui library) later on, just uncom
 
 #### upload_to_cdn
 ```
-// gulpfile.js
+/* gulpfile.js */
 uploadQiniuCdnAssets,
 deleteQiniuCdnAssets,
 
 // webpack.config.prod.js
 publicPath: '[your-cdn-path-prefix-where-you-put-your-built-files]',
 
-// config.default.ts
+/* config.default.ts */
 // {
 //   prefix: '/build',
 //   dir: path.join(appInfo.baseDir, '/build'),
@@ -99,6 +103,12 @@ if you dont know what this is or you just want the files provided from your own 
 
 #### node_docker_image
 ```
+/* Dockerfile */
 FROM xxx.aliyuncs.com/your-repositry/node-12.18.3
 ```
-set your node image before build. `dumb-init` could be removed if not needed or you should install it to your node image first.
+set your node image before build. `dumb-init` could be removed if not needed, otherwise you should install it to your node image first.
+
+### Step 3. Start and debug
+```
+npm run dev
+```
