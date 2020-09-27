@@ -1,9 +1,7 @@
-import { Application } from 'egg'
+import { Controller } from 'egg'
 
-export default (app: Application) => {
-  return class IndexController extends app.Controller {
-    public async index() {
-      await this.ctx.render('index.html')
-    }
+export default class IndexController extends Controller {
+  public async index() {
+    await this.ctx.render('index.html')
   }
 }
