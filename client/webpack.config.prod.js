@@ -99,7 +99,7 @@ module.exports = webpackMerge.merge(baseConfig, {
     new webpack.HashedModuleIdsPlugin(),
   ],
   externals: {
-    'bluebird': 'Promise',
+    bluebird: 'Promise',
     react: 'React',
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM',

@@ -48,6 +48,7 @@
     "@types/webpack": "4.41.21",
     "address": "1.1.2",
     "babel-loader": "8.1.0",
+    "css-loader": "4.3.0",
     "del": "5.1.0",
     "egg-bin": "4.15.0",
     "egg-ts-helper": "1.25.8",
