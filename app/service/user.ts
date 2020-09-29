@@ -62,11 +62,11 @@ export default (app: Application) => {
     }
 
     public async signup(username: string, password: string, nickname: string) {
-      if (this.app.model.User.findOne({ name: username })) {
+      if (await this.app.model.User.findOne({ name: username })) {
         return this.ctx.throwError('username has been used')
       }
 
-      if (this.app.model.User.findOne({ nickname })) {
+      if (await this.app.model.User.findOne({ nickname })) {
         return this.ctx.throwError('nickname has been used')
       }
 
